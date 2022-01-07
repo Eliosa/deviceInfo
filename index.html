@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="https://cdn.bootcdn.net/ajax/libs/mobile-detect/1.4.5/mobile-detect.min.js"></script>
+<body>
+    <div>userAgent:  <span id="info"></span></div>
+    <hr>
+    <div>您的设备为： <span id="device"></span> </div>
+    <div>设备版本 <span id="version"></span> </div>
+    <div>浏览器代理 <span id="agent"></span> </div>
+</body>
+<script>
+    var md = new MobileDetect(window.navigator.userAgent)
+    document.getElementById('info').innerHTML = window.navigator.userAgent
+    document.getElementById('device').innerHTML = md.mobile()
+    document.getElementById('version').innerHTML = md.version(md.mobile())
+    document.getElementById('agent').innerHTML = md.userAgents()
+</script>
+</html>
